@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Центр управления — WONDER.GG</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Центр управления WONDER.GG: новости, игроки, команды, матчи, турниры, настройки.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ZE-xCRylbtbtcdlG3BtrJFFXl6ISx7oH5Erqwkuvt0t774l4kNXqYafW_AfY8X4PWOTc8alrRktE7W7MbWDch56pRm7jmuCHNUaH0ceiJAiuW-GuGiAXDOH9ZE2SPJtSgVmX25_PRDAdja5DZIk6HA" charset="UTF-8"></script></head>
+<body data-page="admin">
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">WONDER.GG</a>
+      <span class="badge badge--ghost">Центр управления</span>
+      <div class="header__actions">
+        <a class="btn btn--outline btn--sm" href="index.html">Открыть сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ЭКРАН БЛОКИРОВКИ: доступ по коду -->
+    <section id="adminLock" class="hide">
+      <div class="lock-wrap">
+        <h1>Вход в панель</h1>
+        <p class="muted mb-16">Введите код доступа. Страница выгружается по отдельной ссылке и недоступна из меню сайта.</p>
+        <form class="form" id="pinForm">
+          <label>Код доступа
+            <input id="pinInput" type="password" autocomplete="current-password" placeholder="••••••••">
+          </label>
+          <button class="btn btn--primary" type="submit">Войти</button>
+        </form>
+        <p class="muted mb-8" style="font-size:11px;margin-top:14px">Код по умолчанию: <span class="mono">wonder2026</span> (меняется в разделе «Настройки»).</p>
+      </div>
+    </section>
+
+    <!-- ПРИЛОЖЕНИЕ -->
+    <div id="adminApp">
+      <!-- Шапка админки -->
+      <section class="admin-hero">
+        <div>
+          <h1>Центр управления</h1>
+          <p>Публикуйте новости, добавляйте игроков, команды, матчи и турниры. Данные сохраняются в базе (Firebase Firestore) и сразу появляются на сайте.</p>
+        </div>
+        <div class="admin-hero__actions">
+          <button class="btn btn--outline btn--sm" id="exportBtn" type="button">Экспорт JSON</button>
+          <label class="btn btn--ghost btn--sm" for="importInput" style="cursor:pointer">Импорт JSON</label>
+          <input type="file" id="importInput" accept="application/json" class="hide">
+          <button class="btn btn--ghost btn--sm" id="resetBtn" type="button">Очистить базу</button>
+        </div>
+      </section>
+
+      <!-- Вкладки сущностей -->
+      <nav class="tabs" id="adminTabs">
+        <button class="tab tab--active" data-tab="news" type="button">Новости</button>
+        <button class="tab" data-tab="players" type="button">Игроки</button>
+        <button class="tab" data-tab="teams" type="button">Команды</button>
+        <button class="tab" data-tab="matches" type="button">Матчи</button>
+        <button class="tab" data-tab="tournaments" type="button">Турниры</button>
+        <button class="tab" data-tab="settings" type="button">Настройки</button>
+      </nav>
+
+      <div class="admin-grid">
+        <!-- Форма добавления/редактирования -->
+        <section class="panel" id="adminFormWrap"></section>
+
+        <!-- Список записей / инфо о базе -->
+        <section class="panel" id="adminList"></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__links">
+        <a href="index.html">На главную</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Пользовательское соглашение</a>
+      </div>
+      <div class="footer__copy">©2026 WONDER.GG</div>
+    </div>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a47ec84a1c5f9deb',t:'MTc5MTU2MzU1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
